@@ -1,0 +1,61 @@
+// diagrama de classes de exemplo
+// duas barras definem comentários
+
+Sistema 
+association Ajuda
+---
+- contadorAjudas: int
+- ajudas: Ajuda[]
+---
++ ajuda(descricao:str, nome:str): int
++ apoio(idAjuda:int): void
++ exibir(idAjuda:int): str
++ mensagens(idAjuda:int): str
++ mensagem(idAjuda:int,descricao:str, autor:str):void
++ mensagem(idAjuda:int,descricao:str, autor:str, url:str): void
++ tema():void
++ cadastrarAjuda(idAjuda:int,idTema:int):void
++ contarAjudas(idTema:int):int
++ exibirTema(idTema:int):str
+---
+
+Ajuda 
+composes MensagemApoio
+---
+- descricao: str
+- nomeDeQuemPedeAjuda: str
+- numeroDeApoios: int
+- id: int
+- mensagens: MensagemApoio[]
+---
++ Ajuda(descricao:str, nome:str, id:int)
++ incrementarApoio(): void
++ toString(): str
++ cadastrarMensagemApoio(descricao:str, autor:str):void
++ cadastrarMensagemApoio(descricao:str, autor:str, url:str): void
++ listarMensagensApoio():str
+---
+
+MensagemApoio
+---
+- autor: str
+- texto: str
+- urlImagem: str
+---
++ MensagemApoio(autor:str, texto:str)
++ MensagemApoio(autor:str, texto:str, urlImagem:str)
++ toString(): str
+---
+
+Tema
+aggregates Ajuda
+---
+- nome: str
+- id: str
+- ajudas: Ajuda[]
+---
++ Tema(nome:str, id:int)
++ cadastrarAjuda(ajuda:Ajuda):void
++ contarAjudas(): int
++ toString(): str
+---
