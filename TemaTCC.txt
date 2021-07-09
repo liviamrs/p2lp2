@@ -1,0 +1,21 @@
+// diagrama de classes de exemplo
+// duas barras definem comentários
+
+TemaTCC
+---
+- titulo: str
+- descricao: str
+- emailOrientador: str
+- popularidade: int
+- comentarios: str[]
+---
++ TemaTCC(titulo:str, descricao:str, emailOrientador:str)
++ TemaTCC(titulo:str, emailOrientador:str)
++ setDescricao(descricao:str):void
++ adicionaPopularidade():void
++ getPopularidade():int
++ adicionaComentario(msg:str):void
++ getComentarios():str[]
++ toString():str
+---
+
