@@ -7,8 +7,8 @@ public class ControllerProg2Play {
 		produtos = new Catalogo();
 	}
 	
-	public int cadastrarProduto(String nome, double preço) {
-		return produtos.cadastrarProduto(nome, preço);
+	public int cadastrarProduto(String nome, double preco) {
+		return produtos.cadastrarProduto(nome, preco);
 	}
 	public void comentarProduto(int id, String comentario) {
 		produtos.comentarProduto(id, comentario);

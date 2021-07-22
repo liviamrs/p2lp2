@@ -14,8 +14,8 @@ public class Catalogo {
 		produtos = new HashMap<>();
 	}
 	
-	public int cadastrarProduto(String nome, double preço) {
-		produtos.put(++geradorId, new Produto(nome,preço,geradorId));
+	public int cadastrarProduto(String nome, double preco) {
+		produtos.put(++geradorId, new Produto(nome,preco,geradorId));
 		return geradorId;
 	}
 	public void comentarProduto(int id, String comentario) {

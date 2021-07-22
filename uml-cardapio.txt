@@ -1,0 +1,35 @@
+// diagrama de classes de exemplo
+// duas barras definem comentários
+
+Main
+association Cardapio
+---
+---
+---
+
+Item
+---
+- nome: str
+- calorias: int
+---
++ Item(nome:str, calorias:int)
++ getCalorias():int
++ getNome():str
++ toString():str
++ equals(obj:Object):boolean
+---
+
+Cardapio
+composes Item
+---
+- nome: str
+- itens: Item[]
+---
++ Cardapio(nome:str)
++ Cardapio(nome:str, qtdItens:int)
++ adicionaItem(nome:str, calorias:int):void
++ calculaCaloriasRefeicao(refeicao:str[], tamanho:str):int
++ listaCardapio():str
++ toString():str
+---
+
