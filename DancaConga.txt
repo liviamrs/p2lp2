@@ -1,0 +1,36 @@
+// diagrama de classes de exemplo
+// duas barras definem comentários
+
+Main
+association DancaConga
+---
+---
+---
+
+Dancarino
+---
+- nome: str
+- emoji: str
+---
++ Dancarino(nome:str, emoji:str)
++ getNome():str
++ getEmoji():str
++ setEmoji(novoEmoji:str):void
++ toString():str
++ equals(obj:Object):boolean
+---
+
+DancaConga
+composes Dancarino
+---
+- dancarinos: ArrayList<Dancarino>
+---
++ DancaConga()
++ adicionaDancarino(nome:str, emoji:str):void
++ listarDancarinos():str
++ listarDancarinosEmoji():str
++ contarDancarinos():int
++ exibeDancarino(posicao:int):str
++ toString():str
+---
+
