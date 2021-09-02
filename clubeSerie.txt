@@ -1,0 +1,82 @@
+// diagrama de classes de exemplo
+// duas barras definem comentários
+
+Main
+association ClubeSerieUFCG
+---
+---
+---
+
+ClubeSerieUFCG 
+composes Serie
+---
+- series: HashMap<titulo,Serie>
+---
++ ClubeSerieUFCG()
++ cadastrarSerie(titulo:string, categoria:string, anoLancamento:string, imdb:double):void
++ listarSeries():string
++ exibirSerie(titulo:string):string
++ exibirSerieComDetalhes(titulo:string, tipoVisualizacao:string):string
++ cadastraOpiniao(titulo:string,nota:double, comentario:string):void
++ cadastraOpiniao(titulo:string,nota:double, comentario:string, autor:string):void
++ listarOpinioes(titulo:string):string
+---
+
+Serie
+composes Opiniao
+---
+- titulo: string
+- categoria: string
+- anoLancamento: string
+- imdb: double
+- opinioes: ArrayList<Opiniao>
+---
++ Serie(titulo:string, categoria:string, anoLancamento:string, imdb:double)
++ setImdb(outro:double):void
++ getImdb():double
++ cadastraOpiniao(nota:double,comentario:string):void
++ cadastraOpiniao(nota:double,comentario:string,autor:string):void
++ listarOpinioes():string
++ exibirComDetalhes():string
++ exibirComDetalhesPlus():string
++ notaGeral():double
++ comentarioLegal():String
++ toString():string
+---
+
+Opiniao
+---
+- nota:double
+- comentario: texto
+- autor: string
+---
++ Opiniao(nota:double, comentario:string)
++ Opiniao(nota:double, comentario:string, autor:string)
++ getNota():double
++ getComentario():string
++ toString():string
++ equals(outro:Object):boolean
+---
+
+FormasVisualizacao<Interface>
+---
+---
++ notaGeral(listaOpinioes:ArrayList<Opiniao>):double
++ comentarioLegal(listaOpinioes:ArrayList<Opiniao>):string
+---
+
+Simples
+implements FormasVisualizacao<Interface>
+---
+---
++ notaGeral(listaOpinioes:ArrayList<Opiniao>):double
++ comentarioLegal(listaOpinioes:ArrayList<Opiniao>):string
+---
+
+Temporal
+implements FormasVisualizacao<Interface>
+---
+---
++ notaGeral(listaOpinioes:ArrayList<Opiniao>):double
++ comentarioLegal(listaOpinioes:ArrayList<Opiniao>):string
+---
