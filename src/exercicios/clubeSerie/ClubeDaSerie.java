@@ -1,12 +1,16 @@
 package exercicios.clubeSerie;
 
-import java.util.HashMap;
+import java.util.ArrayList;
+import java.util.Collections;
+import java.util.Comparator;
+import java.util.Map;
+import java.util.TreeMap;
 
 public class ClubeDaSerie {
-	private HashMap<String, Serie> series;
+	private Map<String, Serie> series;
 	
 	public ClubeDaSerie() {
-		series = new HashMap<>();
+		series = new TreeMap<>();
 	}
 	
 	public void cadastrarSerie(String titulo, String categoria, String anoLancamento, double imdb) {
@@ -15,6 +19,12 @@ public class ClubeDaSerie {
 	
 	public String listarSeries() {
 		return series.toString();
+	}
+	
+	public String listarSeries(Comparator<Serie> filtro) {
+		ArrayList<Serie> lista = new ArrayList<>(series.values());
+		Collections.sort(lista, filtro);
+		return lista.toString();
 	}
 	
 	public String exibirSerie(String titulo) {
@@ -26,7 +36,7 @@ public class ClubeDaSerie {
 		if(tipoVisualizacao.equals("Simples")){
 			f = new Simples();
 		}else if(tipoVisualizacao.equals("Temporal")) {
-			f = new Simples();//temporal
+			f = new Temporal();
 		}else {
 			throw new IllegalArgumentException("tipo invalido");
 		}

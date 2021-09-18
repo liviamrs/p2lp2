@@ -3,7 +3,7 @@ package exercicios.clubeSerie;
 import java.util.ArrayList;
 import java.util.List;
 
-public class Serie {
+public class Serie implements Comparable<Serie>{
 	private String titulo, categoria, anoLancamento;
 	private double imdb;
 	private List<Opiniao> opinioes;
@@ -63,6 +63,11 @@ public class Serie {
 				getCategoria() + "-" +
 				getAnoLancamento() + "-" +
 				getImdb();
+	}
+
+	@Override
+	public int compareTo(Serie o) {
+		return getTitulo().compareTo(o.getTitulo());
 	}
 
 }
