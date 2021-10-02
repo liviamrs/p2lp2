@@ -1,0 +1,89 @@
+// diagrama de classes de exemplo
+// duas barras definem comentários
+
+Main
+association UsuarioController
+directionalAssociation SistemaController // A ser implementado depois
+---
+---
+---
+
+Asenta
+composes Apresentacao<Abstract>
+---
+- apresentacoes: HashMap<str, Apresentacao>
+- funcionarios: HashMap<str, Funcionario>
+---
++ Asenta()
++ cadastrarExpositiva(codigo:str, data:str, horario:str, local: str, responsavel: str, qtdCadeiras:int, hasProjetor:boolean): void
++ cadastrarPratica(codigo:str, data:str, horario:str, local: str, responsavel: str, qtdMaquinas:int, softwares:str[]): void
++ cadastrarDialogica(codigo:str, data:str, horario:str, local: str, responsavel: str): void
++ consultar(codigo: str): str
++ exibir(codigo: str): str
++ tempo(codigo:str):int
++ cadastrarFuncionario(nome:str, siape:str):void
++ aloca(codigo:str, siape:str):void
++ alocado(codigo:str):str
+
+---
+
+Apresentacao<Abstract>
+aggregates Funcionario
+---
+- codigo: str
+- data: str
+- horario: str
+- responsavel: str
+# qtdFuncionarios: int
+# funcionario: Funcionario
+---
++ Apresentacao(codigo:str, data:str, horario:str, local: str, responsavel: str)
++ tempo():int
++ toString():str
++ equals(obj:Object):boolean
++ hashcode():int
++ aloca(f:Funcionario):void
++ alocado():str
+---
+
+Expositiva
+extends Apresentacao<Abstract>
+---
+- qtdCadeiras: int
+- hasProjetor: boolean
+---
++ Expositiva(codigo:str, data:str, horario:str, local: str, responsavel: str, qtdCadeiras:int, hasProjetor:boolean)
++ toString():str
++ tempo():int
+---
+
+Pratica
+extends Apresentacao<Abstract>
+---
+- qtdMaquinas:int
+- softwareInstalado:str[]
+---
++ Pratica(codigo:str, data:str, horario:str, local: str, responsavel: str, qtdMaquinas:int, softwares:str[])
++ toString():str
++ tempo():int
+---
+
+Dialogica
+extends Apresentacao<Abstract>
+---
+---
++ Dialogica(codigo:str, data:str, horario:str, local: str, responsavel: str)
++ tempo():int
+---
+
+Funcionario
+---
+- nome:str
+- siape:str
+---
++ Funcionario(nome:str, siape:str)
++ toString():str
++ equals(obj:Object):boolean
++ hashcode():int
+---
+
