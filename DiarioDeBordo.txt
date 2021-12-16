@@ -1,0 +1,54 @@
+// diagrama de classes de exemplo
+// duas barras definem comentários
+
+Main
+association Diario
+---
+---
+---
+
+Diario
+composes Anotacao
+---
+- dono:str
+- ano:int
+- anotacoes: Anotacao[]
+- temas: Tema[]
+- indiceLivre:int
+---
++ Diario(dono:str, ano:int, tamanho:int)
++ adicionarAnotacao(texto:str, data:str, nota:double):void
++ adicionarAnotacao(texto:str, data:str):void
++ listarAnotacoes():str
++ listarAnotacoes(limiteInferior:double, limiteSuperior:double):str
++ contarAnotacoes():int
++ mediaDesempenho():double
++ exibirAnotacao(indice:int):str
++ toString():str
+---
+
+Anotacao
+---
+- texto:str
+- data:str
+- desempenho:double
+- tema: Tema
+---
++ Anotacao(texto:str, data:str, nota:double)
++ Anotacao(texto:str, data:str)
++ getTexto():str
++ getData():str
++ getDesempenho():str
++ setDesempenho(nota:double):void
++ adicionaTema(tema:Tema):void
++ toString():str
+---
+
+Tema
+---
+- conteudo:str
+- complexidade:int
+---
++ Tema(conteudo:str, complexidade:int)
++ toString():str
+---
