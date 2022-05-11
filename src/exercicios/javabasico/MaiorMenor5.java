@@ -1,7 +1,12 @@
 package exercicios.javabasico;
 
 import java.util.Scanner;
-public class MaiorMenor {
+/**
+ * Dirlididi problema Key: SVBLB6mH2
+ * @author Livia
+ *
+ */
+public class MaiorMenor5 {
 public static void main(String[] args) {
 	String palavra;
 	
@@ -20,6 +25,7 @@ public static void main(String[] args) {
 		}
 	}
 	System.out.println(maior);
+	
 	System.out.println(menor);	
 }
 }
