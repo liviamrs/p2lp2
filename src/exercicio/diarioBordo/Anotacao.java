@@ -1,5 +1,7 @@
 package exercicio.diarioBordo;
 
+import org.junit.platform.engine.support.hierarchical.SameThreadHierarchicalTestExecutorService;
+
 /* 
  * Associacao e composição
  * Por: Lívia Sampaio Campos
@@ -8,6 +10,7 @@ package exercicio.diarioBordo;
  * simplificações.
  */
 public class Anotacao {
+	private String nome;
 	private String data;
 	private String texto;
 	private double autoAvaliacao;
@@ -41,6 +44,11 @@ public class Anotacao {
 	
 	public void setAvaliacao(double novo){
 		autoAvaliacao = novo;
+	}
+	
+	public String exibeAnotacao() {
+		return "Data: " + this.getData() + "\n" +
+				"Texto: " + this.texto;
 	}
 	
 	public String situacaoDesempenho(){
