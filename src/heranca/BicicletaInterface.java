@@ -1,7 +1,5 @@
 package heranca;
 
-import classes.Assento;
-
 public interface BicicletaInterface {
 
 	public double getVelocidadeMaxima();

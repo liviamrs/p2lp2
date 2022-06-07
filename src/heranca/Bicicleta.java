@@ -1,7 +1,5 @@
 package heranca;
 
-import classes.Assento;
-
 public class Bicicleta extends BicicletaAbstrato{
 	public Bicicleta(double velocidadeMaxima, String modelo, Assento assento){
 		super(velocidadeMaxima, modelo, assento);

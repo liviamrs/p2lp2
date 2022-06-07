@@ -1,16 +1,29 @@
-package classes;
-
+package heranca;
+/**
+ * Essa classe faz parte da Bicicleta
+ * Conteúdo sobre relacao entre classes
+ * @author Livia <br>
+ *
+ */
 public class Assento {
 
 	private int tamanhoAssento;
 	private String descricaoAssento;
 	
+	/**
+	 * 
+	 * @param tamanho
+	 * @param descricaoAssento
+	 */
 	public Assento(int tamanho, String descricaoAssento){
 		tamanhoAssento = tamanho;
 		this.descricaoAssento = descricaoAssento;
 	}
 	
-	
+	/**
+	 * Acessador de assento
+	 * @return O valor do tamanho do assento
+	 */
 	public int getTamanhoAssento() {
 		return tamanhoAssento;
 	}

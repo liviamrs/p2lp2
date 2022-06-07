@@ -9,7 +9,6 @@ package heranca;
  * portanto, pode estar incompleto ou com algumas 
  * simplificações.
  */
-import classes.Assento;
 public abstract class BicicletaAbstrato implements BicicletaInterface{
 	protected double velocidadeAtual;
 	private double velocidadeMaxima;

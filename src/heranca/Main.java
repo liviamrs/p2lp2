@@ -1,7 +1,5 @@
 package heranca;
 
-import classes.Assento;
-
 public class Main {
 	public static void main(String[] args) {
 		BicicletaAbstrato b1 = new Bicicleta(10,"caloi",new Assento(128,"gel"));

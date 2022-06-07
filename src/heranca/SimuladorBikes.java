@@ -1,6 +1,5 @@
 package heranca;
 
-import classes.Assento;
 public class SimuladorBikes {
 	private BicicletaInterface b;
 

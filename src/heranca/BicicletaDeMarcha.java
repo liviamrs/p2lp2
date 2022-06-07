@@ -8,7 +8,6 @@ package heranca;
  * portanto, pode estar incompleto ou com algumas 
  * simplificações.
  */
-import classes.Assento;
 public class BicicletaDeMarcha extends BicicletaAbstrato{
 	private int numMarchas;
 	private int marchaAtual;
@@ -44,5 +43,4 @@ public class BicicletaDeMarcha extends BicicletaAbstrato{
 				+ "\nNumero de marchas: " + this.numMarchas;
 		
 	}
-
 }
