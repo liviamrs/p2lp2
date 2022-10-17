@@ -1,6 +1,6 @@
 package exercicios.pratoCheio;
 
-public class PratoPersonalizado implements PratoInterface{
+public abstract class PratoPersonalizado implements PratoInterface{
 
 	private Personalizacao personalizacao;
 	private double precoBase;
@@ -78,7 +78,5 @@ public class PratoPersonalizado implements PratoInterface{
 		return true;
 	}
 
-	public double calculaPreco() {
-		return precoBase;
-	}
+	public abstract double calculaPreco();
 }

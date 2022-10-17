@@ -1,29 +1,33 @@
 package exercicios.pratoCheio;
 
-import java.util.ArrayList;
-import java.util.List;
+import java.util.HashMap;
+import java.util.Map;
 
 public class PratoCheioController{
 
-	private List<PratoInterface> pratos;
+	private Map<Integer, PratoPersonalizado> pratos;
+	private int contadorId;
 	
 	public PratoCheioController(){
-		pratos = new ArrayList<>();
+		pratos = new HashMap<>();
 	}
 	
-	public PratoPersonalizado criaPratoRetangular(double precoBase, String personalizacaoStr, double base, double altura, String autor) {
+	public int criaPratoRetangular(double precoBase, String personalizacaoStr, double base, double altura, String autor) {
 		Personalizacao personalizacao = criarPersonalizacao(personalizacaoStr);
-		return new PratoRetangular(precoBase, personalizacao, base, altura, autor);
+		pratos.put(contadorId, new PratoRetangular(precoBase, personalizacao, base, altura, autor));
+		return contadorId++;
 	}
 
-	public PratoPersonalizado criaPratoTriangular(double precoBase, String personalizacaoStr, double base, double altura, String autor) {
+	public int criaPratoTriangular(double precoBase, String personalizacaoStr, double base, double altura, String autor) {
 		Personalizacao personalizacao = criarPersonalizacao(personalizacaoStr);
-		return new PratoTriangular(precoBase, personalizacao, base, altura, autor);
+		pratos.put(contadorId, new PratoTriangular(precoBase, personalizacao, base, altura, autor));
+		return contadorId++;
 	}
 
-	public PratoPersonalizado criaPratoCircular(double precoBase, String personalizacaoStr, double raio, String autor) {
+	public int criaPratoCircular(double precoBase, String personalizacaoStr, double raio, String autor) {
 		Personalizacao personalizacao = criarPersonalizacao(personalizacaoStr);
-		return new PratoCircular(precoBase, personalizacao, raio, autor);
+		pratos.put(contadorId, new PratoCircular(precoBase, personalizacao, raio, autor));
+		return contadorId++;
 	}
 
 	private Personalizacao criarPersonalizacao(String personalizacaoStr)  {
@@ -42,7 +46,7 @@ public class PratoCheioController{
 
 	public double calculaLucroTotal() {
 		double lucroTotal = 0.0;
-		for(PratoInterface prato : pratos){
+		for(PratoPersonalizado prato : pratos.values()){
 			lucroTotal += prato.calculaPreco();
 		}
 		return lucroTotal;
@@ -50,7 +54,7 @@ public class PratoCheioController{
 
 	public String buscarPratoPorPersonalizacao(String personalizacaoStr) {
 		Personalizacao base = criarPersonalizacao(personalizacaoStr);
-		for(PratoInterface p: pratos) {
+		for(PratoPersonalizado p: pratos.values()) {
 			if(p.getPersonalizacao().equals(base)) {
 				return p.toString(); 
 			}
@@ -66,8 +70,8 @@ public class PratoCheioController{
 		return this.pratos.size();
 	}
 	
-	public void removePrato(int posicao){
-		this.pratos.remove(posicao);
+	public void removePrato(int id){
+		this.pratos.remove(id);
 	}
 
 	@Override

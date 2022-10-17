@@ -13,7 +13,7 @@ public class CaraCoroa {
 		System.out.println("Informe um inteiro: ");
 		int limite = s.nextInt();
 		jogar(limite);		
-		s.close();
+		//s.close();
 	}//fim do main
 	
 	private static void jogar(int limite2){
