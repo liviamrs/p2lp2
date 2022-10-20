@@ -1,8 +1,6 @@
 
 package exercicios.bicicleta;
 
-import java.util.Objects;
-
 /* 
  * Relacoes entre classes
  * 
@@ -20,11 +18,7 @@ public class Bicicleta{
 	public Bicicleta(double velocidadeMaxima, String modelo, int tamanho, String descricaoAssento, String modeloAssento){
 		this.velocidadeMaxima = velocidadeMaxima;
 		this.modelo = modelo;
-		meuAssento = new Assento(tamanho, descricaoAssento, modeloAssento);
-	}
-
-	public Bicicleta(double velocidadeMaxima, String modelo, int tamanho, String modeloAssento) {
-		this(velocidadeMaxima, modelo, tamanho, "", modeloAssento);
+		this.meuAssento = new Assento(tamanho, descricaoAssento,modeloAssento);
 	}
 	
 	public String getAssento(){
@@ -62,52 +56,32 @@ public class Bicicleta{
 		return meuAssento.temConforto(larguraQuadril);
 	}
 	
-	/**
-	 * Método básico para retornar representacao textual de objetos.
-	 * Nesse exemplo, pode substituir o método exibeBicicleta()
-	 */
-	@Override
-	public String toString() {
+
+	public String exibeBicicleta() {
 		return "Super bike " + getModelo();
 	}
 	
-	
-	@Override
-	public int hashCode() {
-		return Objects.hash(modelo);
-	}
-	@Override
-	public boolean equals(Object outro) {
-		if (!(outro instanceof Bicicleta)) {
-			return false;
-		}
-		Bicicleta novo = (Bicicleta) outro;
-		return this.modelo.equals(novo.getModelo());
-	}
 	
 	public static void main(String[] args) {
 		Bicicleta b1 = new Bicicleta(20, "monark", 120, "gel","atrio");
 		Bicicleta b2 = new Bicicleta(30, "monark", 120, "gel","atrio");
 		Bicicleta b3 = new Bicicleta(30, "caloi", 120, "espuma","atrio");
 		
-		//usando toString()
-		System.out.println(b1.toString());
-		System.out.println(b2.toString());
-		System.out.println(b3);//equivalente a b3.toString()
-		
-		//usando o equals
-		if(b1.equals(b2)) {
-			//deve imprimir aqui
-			System.out.println("Bicicletas sao iguais, tem o mesmo modelo!");
-		}else {
-			System.out.println("Bicicletas diferentes, nao tem o mesmo modelo!");
+		b1.acelera();
+		b1.acelera();
+
+		for (int i = 0; i < 30; i++) {
+			b2.acelera();
 		}
+		b2.acelera();
+		System.out.println(b1.exibeBicicleta());
+		System.out.println(b2.exibeBicicleta());
+		System.out.println(b3.exibeBicicleta());
 		
-		if(b1.equals(b3)) {
-			System.out.println("Bicicletas sao iguais, tem o mesmo modelo!");
-		}else {
-			//deve imprimir aqui
-			System.out.println("Bicicletas diferentes, nao tem o mesmo modelo!");
-		}
-	}
+		System.out.println(b1.getVelocidadeAtual());
+		System.out.println(b2.getVelocidadeAtual());
+		System.out.println(b3.getVelocidadeAtual());
+		
+		b2.para();
+		System.out.println(b2.getVelocidadeAtual());	}
 }

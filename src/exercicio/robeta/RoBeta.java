@@ -12,8 +12,8 @@ public class RoBeta {
 	private int bateria;
 	private String[] palavras;
 	
+	
 	public RoBeta(int bateria, String[] palavras){
-		checaBateria(bateria);
 		if(palavras == null) {
 			throw new NullPointerException();
 		}
@@ -22,7 +22,7 @@ public class RoBeta {
 	}
 	
 	public String exibeRobo() {
-		return "RoBeta - " + bateria + " - " + Arrays.toString(palavras);
+		return "RoBeta - " + this.bateria + " - " + Arrays.toString(palavras);
 		
 	}
 	
@@ -51,18 +51,11 @@ public class RoBeta {
 		return false;
 	}
 	
-	private void checaBateria(int bateria) {
-		if(bateria < 0) {
-			throw new IllegalArgumentException("Unidades de energia nao pode ser negativo!");
-		}
-	}
-	
 	public int getBateria() {
 		return bateria;
 	}
 
 	public void setBateria(int bateria) {
-		checaBateria(bateria);
 		this.bateria = bateria;
 	}
 }
