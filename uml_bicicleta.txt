@@ -1,0 +1,44 @@
+
+// diagrama de classes de exemplo
+// duas barras definem comentários
+
+Main
+association Bicicleta
+---
+---
++ main(args:str[]):void
+---
+
+Bicicleta 
+composes Assento
+---
+- velocidadeAtual:int
+- velocidadeMaxima:int
+- modelo:str
+- assento:Assento
+---
++ Bicicleta(modelo:str, velocidadeMaxima:int, tamanhoAssento:int, descricaoAssento:str, modeloAssento:str)
++ getVelocidadeAtual():int
++ getModelo():str
++ getVelocidadeMaxima():int
++ getAssento():str
++ setAssento(novoAssento:Assento):void
++ acelera():void
++ desacelera():void
++ para():void
++ exibeBicicleta():str
++ temConforto(larguraQuadril:int):boolean
+---
+
+Assento
+---
+- descricao:str
+- tamanho:int
+- modelo:str
+---
++ Assento(descricao:str, tamanho:int, modelo:str)
++ getTamanho():int
++ getDescricao():str
++ exibeAssento():str
++ temConforto(larguraQuadril:int):boolean
+---
