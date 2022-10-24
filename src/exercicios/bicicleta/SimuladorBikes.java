@@ -71,18 +71,7 @@ public class SimuladorBikes {
 		System.out.println(sb.toString());
 		System.out.println(sb);
 		
-		/*
-		 * //novo simulador
-		 * 
-		 * SimuladorBikes sb2 = new SimuladorBikes(); sb2.configuraBicicleta(new
-		 * Bicicleta(20, "monark", 120, "gel","atrio"));
-		 * System.out.println(sb.exibirBicicleta());
-		 * 
-		 * if(sb.equals(sb2)) { //vai cair aqui System.out.println("Bicicletas iguais");
-		 * }else { System.out.println("Bicicletas diferentes"); }
-		 * 
-		 * if(sb.equals("livia")) { System.out.println("Bicicletas iguais"); }else {
-		 * //vai cair aqui System.out.println("Bicicletas diferentes"); }
-		 */
+//novo simulador
+		
 	}
 }

@@ -23,23 +23,10 @@ public class Assento {
 	}
 	
 	/**
-	 * Cria um assento sem descricao.
-	 * @param tamanho
-	 * @param modelo
-	 */
-	public Assento(int tamanho, String modelo){
-		this(tamanho, "", modelo);
-	}
-	
-	public void setDescricao(String descricao) {
-		descricaoAssento = descricao;
-	}
-	
-	/**
 	 * Acessador de assento
 	 * @return O valor do tamanho do assento
 	 */
-	public int getTamanhoAssento() {
+	public int getTamanho() {
 		return tamanhoAssento;
 	}
 

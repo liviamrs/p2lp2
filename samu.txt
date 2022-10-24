@@ -1,61 +1,72 @@
-// diagrama de classes de exemplo
-// duas barras definem coment√°rios
 
-Sistema 
-association Ajuda
+// diagrama de classes de exemplo
+// duas barras definem coment·rios
+
+Main
+association Samu
 ---
-- contadorAjudas: int
-- ajudas: Ajuda[]
 ---
-+ ajuda(descricao:str, nome:str): int
-+ apoio(idAjuda:int): void
-+ exibir(idAjuda:int): str
-+ mensagens(idAjuda:int): str
-+ mensagem(idAjuda:int,descricao:str, autor:str):void
-+ mensagem(idAjuda:int,descricao:str, autor:str, url:str): void
-+ tema():void
-+ cadastrarAjuda(idAjuda:int,idTema:int):void
-+ contarAjudas(idTema:int):int
++ main(args:str[]):void
+---
+
+Samu
+composes Ajuda, Tema
+---
+- contadorAjudas:int
+- ajudas:Ajuda[]
+- temas:Tema[]
+---
++ Samu()
++ criarMensagemApoio(idAjuda:int, descricao:str, autor:str):void
++ criarMensagemApoio(idAjuda:int, descricao:str, autor:str, imagem:str):void
++ listarMensagens(idAjuda:int):str
++ apoiarAjuda(idAjuda:int):void
++ criarAjuda(descricao:str, autor:str):int
++ exibirAjuda(idAjuda:int):str
++ criarTema(nome:str,idTema:int):void
++ cadastrarAjudaTema(idTema:int,idAjuda:int):void
++ contarAjudasTema(idTema:int):int
 + exibirTema(idTema:int):str
 ---
 
-Ajuda 
-composes MensagemApoio
+Mensagem
 ---
-- descricao: str
-- nomeDeQuemPedeAjuda: str
-- numeroDeApoios: int
-- id: int
-- mensagens: MensagemApoio[]
+- descricao:str
+- autor:str
+- imagem:str
 ---
-+ Ajuda(descricao:str, nome:str, id:int)
-+ incrementarApoio(): void
-+ toString(): str
-+ cadastrarMensagemApoio(descricao:str, autor:str):void
-+ cadastrarMensagemApoio(descricao:str, autor:str, url:str): void
-+ listarMensagensApoio():str
++ Mensagem(descricao:str, autor:str, imagem:str)
++ Mensagem(descricao:str, autor:str)
++ exibir():str
 ---
 
-MensagemApoio
+Ajuda
+composes Mensagem
 ---
-- autor: str
-- texto: str
-- urlImagem: str
+- texto:str
+- autor:str
+- id:int
+- apoios:int
+- mensagens:Mensagem[]
 ---
-+ MensagemApoio(autor:str, texto:str)
-+ MensagemApoio(autor:str, texto:str, urlImagem:str)
-+ toString(): str
++ Ajuda(texto:str, autor:str, id:int)
++ exibeAjuda():str
++ incrementaApoio():void
++ getApoios():int
++ adicionaMensagem(descricao:str, autor:str):void
++ exibeMensagens():str
 ---
 
 Tema
 aggregates Ajuda
 ---
-- nome: str
-- id: str
-- ajudas: Ajuda[]
+- id:int
+- nome:str
+- ajudas:Ajuda[]
 ---
 + Tema(nome:str, id:int)
 + cadastrarAjuda(ajuda:Ajuda):void
-+ contarAjudas(): int
-+ toString(): str
++ contarAjudas():int
++ exibirTema():str
 ---
+
