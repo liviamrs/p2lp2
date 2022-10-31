@@ -2,14 +2,20 @@ package exercicios.samu;
 
 public class Tema {
     private String nome;
-    private String id;
+    private int id;
     private Ajuda[] ajudas;
+    
     public Tema(String nome, int id) {
+    	this.nome = nome;
+    	this.id = id;
 
    }
 
-    public void cadastrarAjuda(Ajuda ajuda){
-
+    public int getId() {
+    	return id;
+    }
+    public void adicionaAjuda(Ajuda ajuda){
+    	ajudas[0] = ajuda;
     }
 
     public int contarAjudas(){
