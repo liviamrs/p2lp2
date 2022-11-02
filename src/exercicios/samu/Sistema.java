@@ -52,7 +52,7 @@ public class Sistema {
     		return;
     	
     	Ajuda a = ajudas[idAjuda];
-    	t.adicionaAjuda(a);
+    	t.adicionaAjuda(a);//note que a ajuda adicionada ja existe no sistema
 
     }
     public int contarAjudasTema(int idTema) {

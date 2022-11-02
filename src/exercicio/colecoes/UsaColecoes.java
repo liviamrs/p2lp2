@@ -12,15 +12,16 @@ import java.util.Arrays;
 import java.util.HashMap;
 import java.util.HashSet;
 import java.util.Iterator;
+import java.util.ListIterator;
 
 public class UsaColecoes {
 	public static void main(String[] args) throws Exception {
 		// saudadesArray();
 
-		// usaArrayListObject();
-		//usaArrayListGenerics();
+		//usaArrayListObject();
+		usaArrayListGenerics();
 		 //usaHashSet();
-		 usaHashMap();
+		 //usaHashMap();
 
 	}
 
@@ -61,6 +62,11 @@ public class UsaColecoes {
 		for (int k = 0; k < posicaoLivre; k++) {
 			System.out.println(cad1[k]);
 		}
+		
+		//varredura com for-each
+		for(Personagem p:cad1) {
+			System.out.println(p);//p.toString()
+		}
 	}
 
 	private static void usaArrayListObject() {
@@ -74,7 +80,7 @@ public class UsaColecoes {
 		// imprime lista com get
 		for (int i = 0; i < cad2.size(); i++) {
 			Object o = cad2.get(i);
-			System.out.println(o);
+			System.out.println(o);//o.toString()
 		}
 
 		// vejam esse erro de compilacao //System.out.println(cad2.get(0).getNome());
@@ -83,8 +89,8 @@ public class UsaColecoes {
 		System.out.println(p.getNome());
 
 		// aqui nao daria certo; tempo de execucao Personagem p2 = (Personagem)
-		// Personagem p2 = (Personagem) cad2.get(1);
-		// System.out.println(p2.getNome());
+		//Personagem p2 = (Personagem) cad2.get(1);
+		//System.out.println(p2.getNome());
 
 	}
 
@@ -98,8 +104,10 @@ public class UsaColecoes {
 		cad1.add(new Personagem("Daenerys Targaryen", 2003));
 		cad1.add(new Personagem("Daenerys Targaryen", 2003));
 		cad1.add(2, new Personagem("livia", 2000));
-		// cad1.add(new String()); Nao eh valido!
+		//cad1.add(new String("livia")); //Nao eh valido!
 
+		Personagem p = cad1.get(0);
+		System.out.println(p.getNome());
 		// imprime lista com iterator
 
 		Iterator<Personagem> it = cad1.iterator();
@@ -110,15 +118,18 @@ public class UsaColecoes {
 
 		// imprime lista com for-each
 		System.out.println("for-each");
-		for (Personagem p : cad1) {
-			System.out.println(p);
+		for (Personagem p2 : cad1) {
+			System.out.println(p2);
 		}
 		System.out.println();
-		/*
-		 * //imprime lista com list-iterator ListIterator<Personagem> it2 =
-		 * cad1.listIterator(cad1.size()); System.out.println("List iterator");
-		 * while(it2.hasPrevious()) { System.out.println(it2.previous()); }
-		 */
+		
+		  //imprime lista com list-iterator 
+		ListIterator<Personagem> it2 = cad1.listIterator(cad1.size());
+		System.out.println("List iterator");
+		while(it2.hasPrevious()) { 
+			System.out.println(it2.previous()); 
+		}
+		 
 
 	}
 
