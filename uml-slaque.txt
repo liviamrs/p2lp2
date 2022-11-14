@@ -1,0 +1,70 @@
+
+// diagrama de classes de exemplo
+// duas barras definem comentários
+
+Main
+association Slaque
+---
+---
++ main(args:str[]):void
+---
+
+Slaque
+composes Usuario,Canal
+---
+- usuarios:HashMap<str,Usuario>
+- canais:HashMap<str,Canal>
+---
++ Slaque()
++ criarUsuario(nomeUsuario:str, email:str):void
++ criarCanal(nomeCanal:str):void
++ adicionarUsuarioCanal(nomeCanal:str, email:str):void
++ enviarMensagem(nomeCanal:str, email:str, texto:str):void
++ removerUsuarioCanal(nomeCanal:str, email:str):void
++ exibirCanal(nomeCanal:str):str
++ exibirUsuarios(nomeCanal:str):str
+---
+Usuario
+---
+- email:str
+- nome:str
+---
++ Usuario(nome:str, email:str)
++ toString():str
++ equals(obj:Object):boolean
++ hashcode():int
+---
+
+Canal
+aggregates Usuario
+composes Mensagem
+---
+- nome:str
+- usuarios:HashSet<Usuario>
+- mensagens:ArrayList<Mensagem>
+---
++ Canal(nome:str)
++ adicionarUsuario(usuario:Usuario):void
++ removerUsuario(usuario:Usuario):void
++ exibirUsuarios():str
++ adicionaMensagem(texto:str, usuario:str):void
++ listarMensagens():str
++ toString():str
++ equals(obj:Object):boolean
++ hashcode():int
+---
+
+Mensagem
+---
+- email:str
+- texto:str
+---
++ Mensagem(email:str, texto:str)
++ toString():str
+---
+
+
+
+
+
+

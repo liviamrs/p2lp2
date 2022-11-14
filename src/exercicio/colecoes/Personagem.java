@@ -1,6 +1,7 @@
 package exercicio.colecoes;
 
 import java.time.LocalDate;
+import java.util.Objects;
 
 /**
  * Codigo desenvolvido para aulas de P2-computacao@ufcg
@@ -40,28 +41,28 @@ public class Personagem {
 		return "nome: " + getNome() + " " + idade();
 	}
 
+	@Override
+	public int hashCode() {
+		return Objects.hash(nome);
+	}
+
+	@Override
+	public boolean equals(Object obj) {
+		if (this == obj)
+			return true;
+		if (obj == null)
+			return false;
+		if (getClass() != obj.getClass())
+			return false;
+		Personagem other = (Personagem) obj;
+		return Objects.equals(nome, other.nome);
+	}
 	
 	/*
-	 * @Override public int hashCode() { final int prime = 31; int result = 1;
-	 * result = prime * result + ((nome == null) ? 0 : nome.hashCode()); return
-	 * result; }
+	 * @Override public boolean equals(Object obj) { if(!(obj instanceof
+	 * Personagem)) { return false; } Personagem novo = (Personagem)obj; return
+	 * nome.equals(novo.getNome());
+	 * 
+	 * }
 	 */
-	  
-	  @Override public boolean equals(Object obj) { if (this == obj) return true;
-	  if (obj == null) return false; if (getClass() != obj.getClass()) return
-	  false; Personagem other = (Personagem) obj; if (nome == null) { if
-	  (other.nome != null) return false; } else if (!nome.equals(other.nome))
-	  return false; return true; }
-	 
-	
-	/*@Override
-	public boolean equals(Object arg0) {
-		if(arg0 instanceof Personagem){
-			Personagem novo = (Personagem) arg0;
-			return getNome().equals(novo.getNome());
-		}
-		return false;
-	}*/
-	
-	
 }

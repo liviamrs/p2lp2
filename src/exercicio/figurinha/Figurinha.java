@@ -9,6 +9,9 @@ public class Figurinha {
 	private int peso;
 	
 	public Figurinha(String jogador, String time, int peso) {
+		if(jogador == null) {
+			throw new NullPointerException("Jogador null");
+		}
 		this.jogador = jogador;
 		this.time = time;
 		//um tipo de tratamento de erros com excecao; poderiam haver outros

@@ -19,9 +19,9 @@ public class UsaColecoes {
 		// saudadesArray();
 
 		//usaArrayListObject();
-		usaArrayListGenerics();
+		//usaArrayListGenerics();
 		 //usaHashSet();
-		 //usaHashMap();
+		 usaHashMap();
 
 	}
 
@@ -129,8 +129,6 @@ public class UsaColecoes {
 		while(it2.hasPrevious()) { 
 			System.out.println(it2.previous()); 
 		}
-		 
-
 	}
 
 	private static void usaHashMap() {
