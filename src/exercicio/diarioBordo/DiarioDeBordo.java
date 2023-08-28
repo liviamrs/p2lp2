@@ -34,7 +34,27 @@ public class DiarioDeBordo {
 		return resultado;
 	}
 	public String pesquisar(int index) {
+		//testar tambem se index esta dentro dos limites do array
+		if(anotacoes[index]==null) {
+			return "VAZIO";
+		}
 		return anotacoes[index].getTexto();
 	}
+	
+	public String statusCompreensao(int index) {
+		if(anotacoes[index]==null) {
+			return "VAZIO";
+		}
+		return anotacoes[index].situacaoDesempenho();
+	}
+	
+	public double mediaCompreensao() {
+		double soma = 0;
+		for (int i = 0; i < qtdEntradas; i++) {
+			soma += anotacoes[i].getAvaliacao();
+		}
+		return soma/qtdEntradas;
+	}
+	
 
 }

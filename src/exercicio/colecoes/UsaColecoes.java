@@ -16,11 +16,11 @@ import java.util.ListIterator;
 
 public class UsaColecoes {
 	public static void main(String[] args) throws Exception {
-		// saudadesArray();
+		//saudadesArray();
 
 		//usaArrayListObject();
 		//usaArrayListGenerics();
-		 //usaHashSet();
+		// usaHashSet();
 		 usaHashMap();
 
 	}
@@ -83,7 +83,8 @@ public class UsaColecoes {
 			System.out.println(o);//o.toString()
 		}
 
-		// vejam esse erro de compilacao //System.out.println(cad2.get(0).getNome());
+		// vejam esse erro de compilacao 
+		//System.out.println(cad2.get(0).getNome());
 
 		Personagem p = (Personagem) cad2.get(0);
 		System.out.println(p.getNome());

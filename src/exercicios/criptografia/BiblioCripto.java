@@ -1,36 +1,36 @@
 package exercicios.criptografia;
 
 import java.util.ArrayList;
-import java.util.List;
 
 public class BiblioCripto {
-	private List<String> textosOriginais;
-	private AlgoritmoCripto algoritmo;
+	private ArrayList<String> textosOriginais;
+	private AlgoritmoCripto alg;
 	
 	public BiblioCripto() {
 		textosOriginais = new ArrayList<String>();
-		algoritmo = new ROT13();
+		alg = new ROT13();
 	}
 	
 	public String criptografar(String textoOriginal) {
 		textosOriginais.add(textoOriginal);
-		return algoritmo.criptografar(textoOriginal);
+		return alg.criptografar(textoOriginal);
 	}
 	
-	public List<String> listarTextosOriginais() {
+	public ArrayList<String> listarTextosOriginais() {
 		return textosOriginais;
 	}
 	
 	public void configurarAlgoritmo(String algoritmo) {
-		switch(algoritmo){
-			case "ROT13":
-				this.algoritmo = new ROT13();
-				break;
-			case "L33T":
-				this.algoritmo = new L33T();
-				break;
-			case "EXP":
-				this.algoritmo = new EXP();
+		switch(algoritmo) {
+		case "ROT13":
+			alg = new ROT13();
+			break;
+		case "L33T":
+			alg = new L33T();
+			break;
+		case "EXP":
+			alg = new EXP();
+			break;
 		}
 	}
 

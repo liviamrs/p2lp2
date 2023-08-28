@@ -1,4 +1,4 @@
-package aula1p2;
+package javaBasico;
 import java.util.Scanner;
 /*
  * Aula 1 P2 em 25.11.21

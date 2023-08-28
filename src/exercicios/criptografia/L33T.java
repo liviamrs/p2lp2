@@ -1,9 +1,11 @@
 package exercicios.criptografia;
 
-public class L33T implements AlgoritmoCripto{
+import java.io.Serializable;
+
+public class L33T implements AlgoritmoCripto, Serializable{
 	@Override
 	public String criptografar(String texto) {
-		// TODO Auto-generated method stub
+		// Aqui o algoritmo L33T
 		return null;
 	}
 }

@@ -5,7 +5,7 @@ import java.util.Map;
 
 public class PratoCheioController{
 
-	private Map<Integer, PratoPersonalizado> pratos;
+	private Map<Integer, PratoInterface> pratos;
 	private int contadorId;
 	
 	public PratoCheioController(){
@@ -46,7 +46,7 @@ public class PratoCheioController{
 
 	public double calculaLucroTotal() {
 		double lucroTotal = 0.0;
-		for(PratoPersonalizado prato : pratos.values()){
+		for(PratoInterface prato : pratos.values()){
 			lucroTotal += prato.calculaPreco();
 		}
 		return lucroTotal;
@@ -54,7 +54,7 @@ public class PratoCheioController{
 
 	public String buscarPratoPorPersonalizacao(String personalizacaoStr) {
 		Personalizacao base = criarPersonalizacao(personalizacaoStr);
-		for(PratoPersonalizado p: pratos.values()) {
+		for(PratoInterface p: pratos.values()) {
 			if(p.getPersonalizacao().equals(base)) {
 				return p.toString(); 
 			}

@@ -36,6 +36,7 @@ public class Personagem {
 		return anoNascimento;
 	}
 
+
 	@Override
 	public String toString() {
 		return "nome: " + getNome() + " " + idade();
@@ -58,11 +59,4 @@ public class Personagem {
 		return Objects.equals(nome, other.nome);
 	}
 	
-	/*
-	 * @Override public boolean equals(Object obj) { if(!(obj instanceof
-	 * Personagem)) { return false; } Personagem novo = (Personagem)obj; return
-	 * nome.equals(novo.getNome());
-	 * 
-	 * }
-	 */
 }

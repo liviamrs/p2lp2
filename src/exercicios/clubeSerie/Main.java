@@ -1,6 +1,7 @@
 package exercicios.clubeSerie;
 
-import java.util.Collections;
+import exercicios.criptografia.AlgoritmoCripto;
+import exercicios.criptografia.EXP;
 
 public class Main {
 	public static void main(String[] args) {
@@ -13,6 +14,8 @@ public class Main {
 		
 		System.out.println(clube.listarSeries());
 		System.out.println(clube.listarSeries(new ComparadorPorImdb()));
+		AlgoritmoCripto x = new EXP();
+		x.criptografar("livia");
 	}
 
 }

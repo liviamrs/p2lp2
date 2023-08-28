@@ -9,15 +9,8 @@ public class Figurinha {
 	private int peso;
 	
 	public Figurinha(String jogador, String time, int peso) {
-		if(jogador == null) {
-			throw new NullPointerException("Jogador null");
-		}
 		this.jogador = jogador;
 		this.time = time;
-		//um tipo de tratamento de erros com excecao; poderiam haver outros
-		if(peso < 2) {
-			throw new IllegalArgumentException("Peso deve ser maior ou igual a 2");
-		}
 		this.peso = peso;
 		quantidade = 1;
 	}
@@ -41,9 +34,6 @@ public class Figurinha {
 	}
 	
 	public void setPeso(int novoPeso) {
-		if(novoPeso < 2) {
-			throw new IllegalArgumentException("Peso deve ser maior ou igual a 2");
-		}
 		peso = novoPeso;
 	}
 	
@@ -85,19 +75,6 @@ public class Figurinha {
 			return false;
 		Figurinha other = (Figurinha) obj;
 		return Objects.equals(jogador, other.jogador) && Objects.equals(time, other.time);
-	}
-	
-	
-	/*
-	@Override
-	public boolean equals(Object f) {
-		if(!(f instanceof Figurinha)) {
-			return false;
-		}
-		Figurinha f2 = (Figurinha) f;
-		return jogador.equals(f2.getJogador())&& time.equals(f2.getTime());
-	}*/
-	
-	
+	}	
 }
 

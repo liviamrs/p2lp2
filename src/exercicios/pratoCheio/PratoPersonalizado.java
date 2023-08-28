@@ -78,5 +78,5 @@ public abstract class PratoPersonalizado implements PratoInterface{
 		return true;
 	}
 
-	public abstract double calculaPreco();
+	//public abstract double calculaPreco();
 }

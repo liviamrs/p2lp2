@@ -18,6 +18,7 @@ public class Anotacao {
 	public Anotacao(String texto, String data){
 		this.data = data;
 		this.texto = texto;
+		//this(data, texto, 0);
 	}
 	
 	public Anotacao(String texto, String data, double autoAvaliacao){
@@ -46,10 +47,16 @@ public class Anotacao {
 		autoAvaliacao = novo;
 	}
 	
+	@Override
+		public String toString() {
+		return "Data: " + this.getData() + "\n" +
+				"Texto: " + this.texto;
+		}
+	/*
 	public String exibeAnotacao() {
 		return "Data: " + this.getData() + "\n" +
 				"Texto: " + this.texto;
-	}
+	}*/
 	
 	public String situacaoDesempenho(){
 		if(autoAvaliacao > 0 && autoAvaliacao <= 5){

@@ -11,7 +11,6 @@ public class Catalogo {
 		figuras = new Figurinha[TAMANHO];
 	}
 	
-	//codigo do adiciona poderia ser melhorado;redundancia
 	public void adicionarFigura(String nome, String time, int peso) {
 		Figurinha f = new Figurinha(nome, time, peso);
 		int i;
@@ -24,13 +23,7 @@ public class Catalogo {
 	}
 	
 	public void adicionarFigura(String nome, String time) {
-		Figurinha f = new Figurinha(nome, time);
-		int i;
-		if((i = getIndex(f)) == -1) {
-			figuras[posicao++] = f;
-		}else {
-			figuras[i].incrementaQtd();
-		}
+		adicionarFigura(nome, time, 2);
 	}
 	
 	public boolean contemFigura(Figurinha figura) {

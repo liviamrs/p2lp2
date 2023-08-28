@@ -1,4 +1,4 @@
-package aula2p2;
+package javaBasico;
 /*
  * DadoMoji.java
  * 
@@ -20,6 +20,6 @@ public class DadoMoji {
 			System.out.println(dado[index]);
 			System.out.println("Girar novamente? 1-parar");
 			op = sc.nextInt();
-		}while(op == 1);	
+		}while(op != 1);	
 	}
 }

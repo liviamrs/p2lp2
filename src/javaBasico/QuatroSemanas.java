@@ -1,4 +1,4 @@
-package aula2p2;
+package javaBasico;
 import java.util.Iterator;
 import java.util.Scanner;
 /*

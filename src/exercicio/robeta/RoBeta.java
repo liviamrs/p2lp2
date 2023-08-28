@@ -5,6 +5,7 @@ import java.util.Random;
 /**
  * Classe basica para ilustrar conceitos iniciais
  * de criação de classes e uso de objetos
+ * Prova de conceito
  * @author Livia
  *
  */
@@ -28,7 +29,7 @@ public class RoBeta {
 	
 	public String falar() {
 		Random random = new Random();
-		int index = random.nextInt(palavras.length+1);
+		int index = random.nextInt(palavras.length);
 		return falar(index);
 	}
 	public String falar(int i) {

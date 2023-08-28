@@ -1,8 +1,6 @@
 package exercicios.criptografia;
 
-import java.io.Serializable;
-
-public class EXP implements AlgoritmoCripto, Serializable{
+public class EXP implements AlgoritmoCripto{
 
 	@Override
 	public String criptografar(String texto) {
