@@ -9,5 +9,9 @@ public class Mensagem {
 		this.usuario = usuario;
 		this.msg = msg;
 	}
+	@Override
+	public String toString() {
+		return msg + " " + usuario.getNome();
+	}
 
 }

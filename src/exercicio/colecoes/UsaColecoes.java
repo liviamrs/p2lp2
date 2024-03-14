@@ -21,12 +21,14 @@ public class UsaColecoes {
 		//usaArrayListObject();
 		//usaArrayListGenerics();
 		// usaHashSet();
-		 usaHashMap();
+		usaHashMap();
 
 	}
 
 	private static void saudadesArray() {
 		Personagem[] cad1 = new Personagem[3];
+		System.out.println(cad1);
+		System.out.println(Arrays.toString(cad1));
 		// pode encher
 		cad1[0] = new Personagem("Sansa Stark", 2006);
 		cad1[1] = new Personagem("Joffrey Baratheon", 2005);
@@ -106,7 +108,6 @@ public class UsaColecoes {
 		cad1.add(new Personagem("Daenerys Targaryen", 2003));
 		cad1.add(2, new Personagem("livia", 2000));
 		//cad1.add(new String("livia")); //Nao eh valido!
-
 		Personagem p = cad1.get(0);
 		System.out.println(p.getNome());
 		// imprime lista com iterator
@@ -161,6 +162,13 @@ public class UsaColecoes {
 		cad1.add(new Personagem("suzy ovelha", 2011));
 		cad1.add(new Personagem("peppa pig", 2012));
 
+		//imprime com for-each
+		for(Personagem p:cad1) {
+			System.out.println(p);
+		}
+		
+		System.out.println(cad1);
+		
 		// imprime conjunto direto
 		Iterator<Personagem> it = cad1.iterator();
 		while (it.hasNext()) {

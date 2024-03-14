@@ -13,15 +13,15 @@ public class Slaque {
 	}
 	
 	public void cadastrarUsuario(String nome, String email) {
-		this.usuarios.put(nome, new Usuario(nome, email));
+		this.usuarios.put(email, new Usuario(nome, email));
 	}
 
 	public void cadastrarCanal(String canal) {
 		this.canais.put(canal, new Canal(canal));
 	}
 
-	public void entrar(String nomeUsuario, String nomeCanal) {
-		Usuario usuario = this.usuarios.get(nomeUsuario);
+	public void entrar(String emailUsuario, String nomeCanal) {
+		Usuario usuario = this.usuarios.get(emailUsuario);
 		Canal canal = this.canais.get(nomeCanal);
 		canal.entrar(usuario);
 	}

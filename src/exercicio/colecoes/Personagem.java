@@ -28,10 +28,6 @@ public class Personagem {
 		return nome;
 	}
 
-	public void setNome(String nome) {
-		this.nome = nome;
-	}
-
 	public int getAnoNascimento() {
 		return anoNascimento;
 	}
@@ -42,6 +38,7 @@ public class Personagem {
 		return "nome: " + getNome() + " " + idade();
 	}
 
+	
 	@Override
 	public int hashCode() {
 		return Objects.hash(nome);

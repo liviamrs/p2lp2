@@ -1,16 +1,15 @@
 package exercicio.bicicleta2;
 
+import java.time.LocalDate;
+
 public class SimuladorBikes {
 	private Bicicleta b;
 	private int contador;
+	String[] historico;
 	
 	public SimuladorBikes() {
-		this(30, "monark");
-	}
-	
-	public SimuladorBikes(double velocidadeMaxima, String modelo) {
-		b = new Bicicleta(velocidadeMaxima, modelo);
-		contador++;
+		b = new Bicicleta(30, "monark");
+		historico = new String[20];
 	}
 	
 	public void acelerar() {
@@ -30,13 +29,24 @@ public class SimuladorBikes {
 	}
 	
 	public String exibirBicicleta() {
-		//return b.toString();
-		return b.getModelo();
+		return b.toString();
 	}
 	
-	public void trocarBicicleta(double velocidaMaxima, String modelo) {
+	public String exibirHistorico() {
+		String resultado = "####\n";
+		for(String s: historico) {
+			if(s == null) {
+				break;
+			}
+			resultado += s + " ; ";
+		}
+		return resultado.trim();
+	}
+	
+	public void configurarBicicleta(double velocidaMaxima, String modelo) {
 		b = new Bicicleta(velocidaMaxima, modelo);
-		contador++;
+		LocalDate hoje = LocalDate.now();
+		historico[contador++] = hoje + " - " + modelo;
 	}
 	
 	public int qtdBicicletasSimuladas() {
@@ -44,6 +54,6 @@ public class SimuladorBikes {
 	}
 	@Override
 	public String toString() {
-		return "Super bike super super #"+this.contador;
+		return "Simulador bike super super #"+this.contador;
 	}
 }
