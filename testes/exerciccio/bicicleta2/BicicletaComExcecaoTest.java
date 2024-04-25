@@ -12,7 +12,7 @@ public class BicicletaComExcecaoTest {
 	@Test
 	public void teste1() {
         String messageError = "Velocidade maxima fora da faixa 0..200km/h";
-        String message = assertThrows(RuntimeException.class, () -> {
+        String message = assertThrows(IllegalArgumentException.class, () -> {
             new BicicletaComExcecao(240, "caloi");
         }).getMessage();
         assertEquals(messageError, message);
@@ -23,8 +23,15 @@ public class BicicletaComExcecaoTest {
         try {
         	new BicicletaComExcecao(40, null);
         	fail("Deveria ter falhado com modelo de bicicleta null");
-        }catch(RuntimeException e) {
+        }catch(NullPointerException e) {
         	String messageError = "Modelo null";
+        	assertEquals(messageError, e.getMessage());
+        }
+        try {
+        	new BicicletaComExcecao(240, "caloi");
+        	fail("Deveria ter falhado com velocidade maxima fora da faixa");
+        }catch(IllegalArgumentException e) {
+        	String messageError = "Velocidade maxima fora da faixa 0.." + BicicletaComExcecao.LIMITE+"km/h";
         	assertEquals(messageError, e.getMessage());
         }
 	}

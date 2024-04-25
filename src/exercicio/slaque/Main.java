@@ -31,7 +31,7 @@ public class Main {
 				slaque.mandarMensagem(usuario, canal, msg);
 			} else if ("IMPRIMIR".equals(comando)) {
 				String canal = campos[1];
-				System.out.println(slaque.imprimir(canal));
+				System.out.println(slaque.exibirCanal(canal));
 			} else if ("SAIR".equals(comando)) {
 				String canal = campos[1];
 				String usuario = campos[2];

@@ -32,7 +32,7 @@ public class Slaque {
 		canal.mandarMensagem(usuario, msg);
 	}
 
-	public String imprimir(String nomeCanal) {
+	public String exibirCanal(String nomeCanal) {
 		Canal canal = this.canais.get(nomeCanal);
 		return canal.toString();
 	}
@@ -41,6 +41,11 @@ public class Slaque {
 		Usuario usuario = this.usuarios.get(nomeUsuario);
 		Canal canal = this.canais.get(nomeCanal);
 		canal.sair(usuario);
+	}
+	
+	public String exibirUsuariosCanal(String nomeCanal) {
+		Canal canal = this.canais.get(nomeCanal);
+		return canal.exibirUsuarios();
 	}
 
 }

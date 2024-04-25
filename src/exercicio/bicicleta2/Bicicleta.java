@@ -50,6 +50,7 @@ public class Bicicleta{
 		return Objects.hash(velocidadeMaxima);
 	}
 
+	/*
 	@Override
 	public boolean equals(Object obj) {
 		if (this == obj)
@@ -60,6 +61,11 @@ public class Bicicleta{
 			return false;
 		Bicicleta other = (Bicicleta) obj;
 		return Double.doubleToLongBits(velocidadeMaxima) == Double.doubleToLongBits(other.velocidadeMaxima);
+	}*/
+	
+	public boolean equals(Bicicleta b) {
+		System.out.println("livia");
+		return true;
 	}
 	
 }

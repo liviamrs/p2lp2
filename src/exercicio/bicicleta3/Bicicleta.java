@@ -3,7 +3,7 @@ package exercicio.bicicleta3;
 
 import java.util.Objects;
 
-public class Bicicleta extends Object{
+public class Bicicleta{
 	protected double velocidadeAtual;
 	private double velocidadeMaxima;
 	private String modelo;

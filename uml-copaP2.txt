@@ -1,0 +1,79 @@
+
+
+// duas barras definem comentários
+
+Main
+association CopaP2Controller
+---
+---
+---
+
+CopaP2Controller
+composes JogadorInterface
+---
+- jogadores: HashMap<Integer, JogadorInterface>
+---
++ cadastrarJogadorAtacante(nome:String, numero:int, poderChute:int, poderDrible:int):void
++ cadastrarJogadorZaga(nome:String, numero:int, poderChute:int, poderCarrinho:double):void
++ cadastrarJogadorMeia(nome:String, numero:int, poderChute:int, subfuncao:String):void
++ listarJogadores():String
++ valorTotal(numero:int):double
++ valorCompra(numero:int):double
++ mudarPoderChute(numero:int, novoPoderChute:int):void
++ disputa(numero1:int, numero2:int):int
+---
+
+JogadorInterface
+---
+---
++ valorTotal():double
++ valorCompra():double
++ setPoderChute(novo:int):void
++ getNumero():int
+---
+
+JogadorAbstrato
+implements JogadorInterface
+---
+- nome:String
+- numero: int
+- poderChute:int
+---
++ JogadorAbstrato(nome:String, numero:int, poderChute:int)
++ toString():String
++ valorTotal():double
++ valorCompra():double
++ setPoderChute(novo:int):void
++ getPoderChute():int
++ getNumero():int
+---
+
+JogadorZaga
+extends JogadorAbstrato
+---
+- potenciaCarrinho:double
+---
++ JogadorZaga(nome:String, numero:int, poderChute:int, potenciaCarrinho:double)
++ valorTotal():double
++ valorCompra():double
+---
+
+JogadorAtacante
+extends JogadorAbstrato
+---
+- poderDrible:int
+---
++ JogadorAtacante(nome:String, numero:int, poderChute:int, poderDrible:int)
++ valorTotal():double
++ valorCompra():double
+---
+
+JogadorMeia
+extends JogadorAbstrato
+---
+- subfuncao:String
+---
++ JogadorMeia(nome:String, numero:int, poderChute:int, subfuncao:String)
++ valorTotal():double
++ valorCompra():double
+---

@@ -2,6 +2,7 @@ package exercicio.slaque;
 
 import java.util.ArrayList;
 import java.util.HashSet;
+import java.util.Objects;
 
 public class Canal {
 
@@ -14,7 +15,28 @@ public class Canal {
 		this.usuarios = new HashSet<>();
 		this.mensagens = new ArrayList<>();
 	}
+	
 
+	@Override
+	public int hashCode() {
+		return Objects.hash(nome);
+	}
+
+
+	@Override
+	public boolean equals(Object obj) {
+		if (this == obj)
+			return true;
+		if (obj == null)
+			return false;
+		if (getClass() != obj.getClass())
+			return false;
+		Canal other = (Canal) obj;
+		return Objects.equals(nome, other.nome);
+	}
+
+
+	/*
 	@Override
 	public int hashCode() {
 		final int prime = 31;
@@ -39,7 +61,7 @@ public class Canal {
 			return false;
 		return true;
 	}
-
+*/
 	public void entrar(Usuario usuario) {
 		this.usuarios.add(usuario);
 	}
@@ -64,6 +86,14 @@ public class Canal {
 
 	public void sair(Usuario usuario) {
 		this.usuarios.remove(usuario);
+	}
+	
+	public String exibirUsuarios() {
+		return usuarios.toString();
+	}
+	
+	public String exibirHistorico() {
+		return mensagens.toString();
 	}
 
 }

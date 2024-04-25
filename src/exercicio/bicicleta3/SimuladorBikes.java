@@ -30,12 +30,16 @@ public class SimuladorBikes {
 	}
 	
 	public String exibirBicicleta() {
-		//return b.toString();
-		return b.getModelo();
+		return b.toString();
 	}
 	
 	public void trocarBicicleta(double velocidaMaxima, String modelo) {
 		b = new Bicicleta(velocidaMaxima, modelo);
+		contador++;
+	}
+	
+	public void trocarBicicleta(double velocidaMaxima, String modelo, int marchas) {
+		b = new BicicletaDeMarcha(velocidaMaxima, modelo, marchas);
 		contador++;
 	}
 	
