@@ -1,17 +1,16 @@
-package heranca;
-import exercicio.pratoCheio.*;
+package exercicio.pratoCheio;
 
-public abstract class PratoPersonalizadoAbstrato implements PratoInterface{
+public abstract class PratoPersonalizado implements PratoInterface{
 
 	private Personalizacao personalizacao;
 	private double precoBase;
 	private String autor;
 	
-	public PratoPersonalizadoAbstrato(double precoBase, Personalizacao personalizacao) {
+	public PratoPersonalizado(double precoBase, Personalizacao personalizacao) {
 		this(precoBase, personalizacao, "");
 	}
 
-	public PratoPersonalizadoAbstrato(double precoBase, Personalizacao personalizacao, String autor) {
+	public PratoPersonalizado(double precoBase, Personalizacao personalizacao, String autor) {
 		if(precoBase < 0){
 			throw new IllegalArgumentException("Preco base nao pode ser negativo.");			
 		}
@@ -71,13 +70,13 @@ public abstract class PratoPersonalizadoAbstrato implements PratoInterface{
 			return true;
 		if (obj == null)
 			return false;
-		if (!(obj instanceof PratoPersonalizadoAbstrato))
+		if (!(obj instanceof PratoPersonalizado))
 			return false;
-		PratoPersonalizadoAbstrato other = (PratoPersonalizadoAbstrato) obj;
+		PratoPersonalizado other = (PratoPersonalizado) obj;
 		if (personalizacao != other.personalizacao)
 			return false;
 		return true;
 	}
 
-	public abstract double calculaPreco();
+	//public abstract double calculaPreco();
 }

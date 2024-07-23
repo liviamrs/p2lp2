@@ -1,7 +1,6 @@
-package heranca;
-import exercicio.pratoCheio.*;
+package exercicio.pratoCheio;
 
-public class PratoCircular extends PratoPersonalizadoAbstrato {
+public class PratoCircular extends PratoPersonalizado {
 
 	private static final double PI = 3.14;
 	private double raio;
