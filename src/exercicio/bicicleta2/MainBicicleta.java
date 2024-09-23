@@ -35,6 +35,8 @@ public static void main(String[] args) {
 		System.out.println(b2.hashCode());
 		Bicicleta b3 = new Bicicleta(30, "monark");
 		System.out.println(b3.hashCode());
+		
+		BicicletaComExcecao b4 = new BicicletaComExcecao(20, null);
 		}
 	
 

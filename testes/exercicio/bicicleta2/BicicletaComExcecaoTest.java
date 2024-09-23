@@ -1,4 +1,4 @@
-package exerciccio.bicicleta2;
+package exercicio.bicicleta2;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertThrows;

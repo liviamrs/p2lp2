@@ -8,7 +8,7 @@ import static org.junit.jupiter.api.Assertions.fail;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
-import exercicios.cardapio.Cardapio;
+import exercicio.cardapio.Cardapio;
 
 class CardapioTest {
 

@@ -5,6 +5,8 @@ import static org.junit.jupiter.api.Assertions.*;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
+import exercicio.bicicleta.BicicletaComExcecao;
+
 class BicicletaComExcecaoTest {
 
 	private BicicletaComExcecao b1;
