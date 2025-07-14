@@ -5,11 +5,11 @@ import java.time.LocalDate;
 public class SimuladorBikes {
 	private Bicicleta b;
 	private int contador;
-	String[] historico;
+	private String[] historico;
 	
 	public SimuladorBikes() {
-		b = new Bicicleta(30, "monark");
 		historico = new String[20];
+		configurarBicicleta(30, "monark");
 	}
 	
 	public void acelerar() {

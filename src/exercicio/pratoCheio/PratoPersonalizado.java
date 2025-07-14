@@ -1,5 +1,7 @@
 package exercicio.pratoCheio;
 
+import java.util.LinkedHashSet;
+
 public abstract class PratoPersonalizado implements PratoInterface{
 
 	private Personalizacao personalizacao;
@@ -66,6 +68,7 @@ public abstract class PratoPersonalizado implements PratoInterface{
 
 	@Override
 	public boolean equals(Object obj) {
+		
 		if (this == obj)
 			return true;
 		if (obj == null)
@@ -77,6 +80,4 @@ public abstract class PratoPersonalizado implements PratoInterface{
 			return false;
 		return true;
 	}
-
-	//public abstract double calculaPreco();
 }

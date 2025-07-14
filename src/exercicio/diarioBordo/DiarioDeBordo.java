@@ -56,5 +56,14 @@ public class DiarioDeBordo {
 		return soma/qtdEntradas;
 	}
 	
+	private String entradas() {
+		return qtdEntradas + "/" + anotacoes.length;
+	}
+	
+	@Override
+	public String toString() {
+		return "Diario de Bordo - " + dono + " - " + entradas();
+	}
+	
 
 }

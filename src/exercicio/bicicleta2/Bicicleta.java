@@ -3,14 +3,19 @@ package exercicio.bicicleta2;
 
 import java.util.Objects;
 
-public class Bicicleta{
+public class Bicicleta implements Cloneable{
 	private double velocidadeAtual;
 	private double velocidadeMaxima;
 	private String modelo;
+	public final int LIMITE_VELO = 70;
 
 	public Bicicleta(double velocidadeMaxima, String modelo){
-		this.velocidadeMaxima = velocidadeMaxima;
 		this.modelo = modelo;
+		this.velocidadeMaxima = velocidadeMaxima;	
+	}
+	
+	public Bicicleta(double velocidadeMaxima){
+		this(velocidadeMaxima, "");
 	}
 
 	public double getVelocidadeMaxima(){
@@ -38,11 +43,11 @@ public class Bicicleta{
 	
 	@Override
 	public String toString() {
-		return "Super bike " + getModelo();
+		return "Super bike " + getModelo().toUpperCase() + " - " + getVelocidadeMaxima();
 	}
 	
 	public String exibirDetalhes() {
-		return "Super bike " + getModelo() + getVelocidadeAtual();
+		return toString() + " - " + getVelocidadeAtual();
 	}
 
 	@Override
@@ -62,10 +67,4 @@ public class Bicicleta{
 		Bicicleta other = (Bicicleta) obj;
 		return Double.doubleToLongBits(velocidadeMaxima) == Double.doubleToLongBits(other.velocidadeMaxima);
 	}
-	
-	/*public boolean equals(Bicicleta b) {
-		System.out.println("livia");
-		return true;
-	}*/
-	
 }

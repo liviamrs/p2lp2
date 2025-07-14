@@ -14,7 +14,8 @@ public class PratoCheioController{
 	
 	public int criaPratoRetangular(double precoBase, String personalizacaoStr, double base, double altura, String autor) {
 		Personalizacao personalizacao = criarPersonalizacao(personalizacaoStr);
-		pratos.put(contadorId, new PratoRetangular(precoBase, personalizacao, base, altura, autor));
+		PratoRetangular r = new PratoRetangular(precoBase, personalizacao, base, altura, autor);
+		pratos.put(contadorId, r);
 		return contadorId++;
 	}
 

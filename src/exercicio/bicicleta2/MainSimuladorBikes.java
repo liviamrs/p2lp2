@@ -4,7 +4,8 @@ import java.util.Scanner;
 
 public class MainSimuladorBikes {
 	public static void main(String[] args) {
-		final String MENU = "1. Configurar bicicleta \n" +
+		final String MENU = "\n O que deseja realizar?\n"+
+							"1. Configurar bicicleta \n" +
 							"2. Exibir bicicleta \n" +
 							"3. Historico simulacoes \n" +
 							"4. Acelerar \n" +
@@ -13,6 +14,15 @@ public class MainSimuladorBikes {
 							"7. Velocidade atual \n" +
 							"8. Sair \n" +
 							">> ";
+		final int CONFIGURAR = 1;
+		final int EXIBIR = 2;
+		final int HISTORICO = 3;
+		final int ACELERAR = 4;
+		final int DESACELERAR = 5;
+		final int PARAR = 6;
+		final int VELOCIDADE_ATUAL = 7;
+		final int SAIR = 8;
+		
 		SimuladorBikes s = new SimuladorBikes();
 		Scanner sc = new Scanner(System.in);
 		int op;
@@ -20,28 +30,28 @@ public class MainSimuladorBikes {
 			System.out.println(MENU);
 			op = sc.nextInt();
 			switch(op) {
-			case 1:
+			case CONFIGURAR:
 				configurarBicicleta(sc, s);
 				break;
-			case 2:
+			case EXIBIR:
 				exibirBicicleta(s);
 				break;
-			case 3:
+			case HISTORICO:
 				historicoSimulacoes(s);
 				break;
-			case 4:
+			case ACELERAR:
 				acelerar(s);
 				break;
-			case 5:
+			case DESACELERAR:
 				desacelerar(s);
 				break;
-			case 6:
+			case PARAR:
 				parar(s);
 				break;
-			case 7:
+			case VELOCIDADE_ATUAL:
 				velocidadeAtual(s);
 				break;
-			case 8:
+			case SAIR:
 				System.out.println("Sistema sera finalizado!");
 				break;
 			default:
@@ -59,16 +69,18 @@ public class MainSimuladorBikes {
 	}
 
 	private static void parar(SimuladorBikes s) {
-		s.parar();	
+		s.parar();
+		System.out.println("parando...");
 	}
 
 	private static void desacelerar(SimuladorBikes s) {
 		s.desacelerar();
-		
+		System.out.println("desacelerando...");
 	}
 
 	private static void acelerar(SimuladorBikes s) {
 		s.acelerar();
+		System.out.println("acelerando...");
 	}
 
 	private static void historicoSimulacoes(SimuladorBikes s) {

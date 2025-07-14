@@ -33,7 +33,6 @@ public class MainDiarioDeBordo {
 		int qtdEntradas = 0;
 		//cria Diario
 		DiarioDeBordo diarioDeBordo = new DiarioDeBordo("Livia", entrada, 2021);
-		//DiarioDeBordo diarioDeBordo = new DiarioDeBordo("Livia", 2021);
 		
 		//manipular diario
 		do{
@@ -72,6 +71,7 @@ public class MainDiarioDeBordo {
 	}
 
 	private static void listar(DiarioDeBordo diario) {
+		System.out.println(diario);
 		System.out.println(diario.listar());
 	}
 	private static void anotar(Scanner sc, DiarioDeBordo diario) {

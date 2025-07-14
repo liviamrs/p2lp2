@@ -1,10 +1,11 @@
 package exercicio.copapedois2;
 
 import java.util.HashMap;
+import java.util.Map;
 
 public class TimeController {
 
-    private HashMap<Integer, JogadorInterface> jogadores;
+    private Map<Integer, JogadorInterface> jogadores;
 
     public TimeController() {
     	jogadores = new HashMap<>();
@@ -57,6 +58,10 @@ public class TimeController {
     
     public int listarPoderChute(int numeroJ1) {
     	//forma mais direta de usar os objetos no mapa
+    	for(Integer numero: jogadores.keySet()) {
+    		JogadorInterface j = jogadores.get(numero);
+    		System.out.println(j);
+    	}
     	return jogadores.get(numeroJ1).getPoderChute();
     }
 
